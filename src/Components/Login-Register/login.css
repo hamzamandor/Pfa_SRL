@@ -2,9 +2,9 @@
     position: relative;
     width: 420px;
     height: 450px;
-    background: transparent;
+    background: url('/Users/mac/Library/Mobile Documents/com~apple~CloudDocs/.Trash/APP-REACT/app-react/src/Components/Asserts/Default_books_0.jpg') no-repeat;
     border: 2px solid rgba(255, 255, 255, .1);
-   backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     border-radius: 10px;
     color: #fff;
@@ -13,6 +13,7 @@
     overflow: hidden;
     transition: height 0.2s ease;
 }
+
 
 .wrapper.active {
     height: 520px;
