@@ -30,7 +30,8 @@ const Login = () => {
             <label>
               <input type="checkbox" /> Remember me
             </label>
-            <a href="#">Forgot password?</a>
+            {/* Remplacez cet élément <a> par un <span> */}
+            <span>Forgot password?</span>
           </div>
           <button type="submit">Login</button>
           <div className="register-link">
