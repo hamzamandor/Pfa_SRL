@@ -1,15 +1,24 @@
-.search-form{
+.search-form {
     width: 100%;
     max-width: 680px;
 }
-.search-form-elem{
+
+.search-form-elem {
     padding: 1.4rem 2.8rem;
     border-radius: 3.8rem;
+    transition: background-color 0.3s ease; /* Ajout de l'accélération d'ambiance */
 }
-.search-form-elem .form-control{
+
+.search-form-elem:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Changement de couleur au survol */
+    /* Vous pouvez modifier la couleur selon vos préférences */
+}
+
+.search-form-elem .form-control {
     font-size: 2rem;
     padding: 0.6rem;
 }
-.search-form-elem .form-control::placeholder{
+
+.search-form-elem .form-control::placeholder {
     opacity: 0.9;
 }

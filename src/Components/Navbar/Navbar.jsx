@@ -17,6 +17,7 @@ const Navbar = () => {
             <span className='text-uppercase fw-7 fs-16 ls-1'>GOLDENBOOK</span>
 
           </Link>
+          
           <button type = "button" className='navbar-toggler-btn' onClick={handleNavbar}>
             <HiOutlineMenuAlt3 size = {35} style = {{
               color: `${toggleMenu ? "#fff" : "#8B4513"}`
