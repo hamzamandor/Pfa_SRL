@@ -1,30 +1,30 @@
 /* Définition des couleurs pour l'ombre portée dynamique */
 :root {
-    --shadow-color1: rgba(255, 0, 0, 0.8); /* Rouge */
-    --shadow-color2: rgba(255, 165, 0, 0.8); /* Orange */
-    --shadow-color3: rgba(255, 255, 0, 0.8); /* Jaune */
-    --shadow-color4: rgba(0, 128, 0, 0.8); /* Vert */
-    --shadow-color5: rgba(0, 0, 255, 0.8); /* Bleu */
-    --shadow-color6: rgba(75, 0, 130, 0.8); /* Indigo */
-    --shadow-color7: rgba(128, 0, 128, 0.8); /* Violet */
+    --shadow-color1: rgba(0, 0, 0, 0.8); /* Gris foncé */
+    --shadow-color2: rgba(0, 0, 0, 0.6); /* Gris */
+    --shadow-color3: rgba(0, 0, 0, 0.4); /* Gris clair */
 }
 
 /* Animation de changement de couleur pour l'ombre portée */
 @keyframes shadow-color-change {
-    0% { box-shadow: 0px 5px 15px 0px var(--shadow-color1); }
-    12.5% { box-shadow: 0px 5px 15px 0px var(--shadow-color2); }
-    25% { box-shadow: 0px 5px 15px 0px var(--shadow-color3); }
-    37.5% { box-shadow: 0px 5px 15px 0px var(--shadow-color4); }
-    50% { box-shadow: 0px 5px 15px 0px var(--shadow-color5); }
-    62.5% { box-shadow: 0px 5px 15px 0px var(--shadow-color6); }
-    75% { box-shadow: 0px 5px 15px 0px var(--shadow-color7); }
-    87.5% { box-shadow: 0px 5px 15px 0px var(--shadow-color1); }
-    100% { box-shadow: 0px 5px 15px 0px var(--shadow-color2); }
+    0%, 100% { box-shadow: 0px 10px 20px 0px var(--shadow-color1); }
+    50% { box-shadow: 0px 20px 40px 0px var(--shadow-color2); }
+}
+
+/* Animation 4D pour les éléments de livre */
+@keyframes book-4d-animation {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
 }
 
 /* Appliquer l'animation à l'ombre portée de l'élément */
 .book-item {
-    animation: shadow-color-change 5s infinite; /* Animation de changement de couleur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: shadow-color-change 5s infinite;
 }
 
 /* Styles restants */
@@ -42,11 +42,13 @@
     padding: 3rem 2rem;
     border-radius: 4px;
     background-color: var(--white-color);
-    transition: var(--transition);
+    color: black;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 .book-item:hover {
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    animation: book-4d-animation 2s infinite linear, shadow-color-change 5s infinite;
 }
 
 .book-item-img img {
@@ -103,6 +105,7 @@
     }
 }
 
+/* Mode sombre */
 .dark-mode .booklist, .dark-mode .book-details {
     background-color: #1a1a1a;
 }
@@ -110,10 +113,11 @@
 .dark-mode .book-item {
     background-color: #2d2d2d;
     box-shadow: rgba(255, 255, 255, 0.05) 0px 5px 15px 0px;
+    color: white; /* Texte en blanc */
 }
 
 .dark-mode .book-item:hover {
-    box-shadow: rgba(255, 255, 255, 0.15) 0px 5px 15px 0px;
+    box-shadow: rgba(255, 255, 255, 0.15) 0px 20px 40px 0px;
 }
 
 .dark-mode .book-item-info-item.publish-year {
