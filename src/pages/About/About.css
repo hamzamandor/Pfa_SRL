@@ -1,6 +1,13 @@
-.about{
+.about {
     padding: 3rem 0;
-}
+    background-color: #7a4406dc; /* Couleur de fond de la section */
+    color: white; /* Couleur du texte */
+  }
+  
+  .section-title h2 {
+    color: white; /* Couleur du titre de section */
+  }
+
 .about-content{
     gap: 4rem;
 }

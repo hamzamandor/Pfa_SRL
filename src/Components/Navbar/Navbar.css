@@ -1,7 +1,8 @@
-.navbar{
+.navbar {
     padding: 1.8rem 0;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-}
+    background-color: #a86f05e3; /* Couleur de fond de la navbar */
+    box-shadow: rgba(139, 84, 2, 0.911) 0px 10px 15px -3px; /* Ombre de boîte noire */
+  }
 .navbar-brand{
     width: 90px;
 }

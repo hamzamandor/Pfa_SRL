@@ -11,33 +11,7 @@
     50% { box-shadow: 0px 20px 40px 0px var(--shadow-color2); }
 }
 
-/* Animation 4D pour les éléments de livre */
-@keyframes book-4d-animation {
-    0% {
-        transform: perspective(1000px) rotateY(0deg);
-    }
-    100% {
-        transform: perspective(1000px) rotateY(360deg);
-    }
-}
-
-/* Appliquer l'animation à l'ombre portée de l'élément */
-.book-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: shadow-color-change 5s infinite;
-}
-
-/* Styles restants */
-.booklist, .book-details {
-    padding: 3rem 0;
-    background-color: #f8f9fa;
-}
-
-.booklist-content {
-    gap: 3rem;
-    display: grid;
-}
-
+/* Styles pour les éléments de livre */
 .book-item {
     padding: 3rem 2rem;
     border-radius: 4px;
@@ -45,10 +19,16 @@
     color: black;
     transform-style: preserve-3d;
     perspective: 1000px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition sur box-shadow */
+    animation: shadow-color-change 5s infinite; /* Animation initiale de l'ombre portée */
+    margin-bottom: 1rem; /* Espacement entre les livres */
 }
 
+/* Animation pour le livre au survol */
 .book-item:hover {
-    animation: book-4d-animation 2s infinite linear, shadow-color-change 5s infinite;
+    box-shadow: 0px 20px 40px 0px var(--shadow-color3); /* Ombre portée plus claire au survol */
+    transform: translateY(-5px); /* Effet de translation vers le haut au survol */
+    animation: book-4d-animation 2s infinite linear; /* Animation au survol */
 }
 
 .book-item-img img {
@@ -71,7 +51,7 @@
     margin-bottom: 4px;
 }
 
-.book-item-info-item:not(.book-item-info-item.title) span:last-child {
+.book-item-info-item:not(.title) span {
     opacity: 0.8;
 }
 
@@ -81,15 +61,18 @@
     font-size: 14px;
 }
 
+/* Médias pour la mise en page à différentes tailles d'écran */
 @media screen and (min-width: 600px) {
     .booklist-content {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem; /* Espacement horizontal entre les livres */
     }
 }
 
 @media screen and (min-width: 992px) {
     .booklist-content {
         grid-template-columns: repeat(3, 1fr);
+        gap: 2rem; /* Espacement horizontal entre les livres */
     }
     .book-item-img img {
         max-width: 150px;
@@ -99,6 +82,7 @@
 @media screen and (min-width: 1200px) {
     .booklist-content {
         grid-template-columns: repeat(4, 1fr);
+        gap: 2rem; /* Espacement horizontal entre les livres */
     }
     .book-item-img img {
         max-width: 120px;
@@ -106,26 +90,40 @@
 }
 
 /* Mode sombre */
-.dark-mode .booklist, .dark-mode .book-details {
-    background-color: #1a1a1a;
+.dark-mode .booklist,
+.dark-mode .book-details {
+    background-color: #1a1a1a; /* Fond sombre */
 }
 
 .dark-mode .book-item {
-    background-color: #2d2d2d;
-    box-shadow: rgba(255, 255, 255, 0.05) 0px 5px 15px 0px;
-    color: white; /* Texte en blanc */
+    background-color: #2d2d2d; /* Fond plus sombre pour les livres */
+    box-shadow: rgba(255, 255, 255, 0.05) 0px 5px 15px 0px; /* Ombre portée légère en mode sombre */
+    color: white; /* Texte en blanc en mode sombre */
 }
 
 .dark-mode .book-item:hover {
-    box-shadow: rgba(255, 255, 255, 0.15) 0px 20px 40px 0px;
+    box-shadow: rgba(255, 255, 255, 0.15) 0px 20px 40px 0px; /* Ombre portée plus claire au survol en mode sombre */
 }
 
 .dark-mode .book-item-info-item.publish-year {
-    color: #ccc;
+    color: #ccc; /* Couleur de l'année de publication en mode sombre */
 }
 
 /* Style du dernier élément */
 .book-item:last-of-type {
-    background-color: #321f1f; /* Marron foncé */
-    color: white; /* Texte en blanc */
+    background-color: #321f1f; /* Fond marron foncé pour le dernier élément */
+    color: white; /* Texte en blanc pour le dernier élément */
+}
+
+/* Style pour le bouton de retour */
+.back-arrow {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+}
+
+.back-arrow:hover {
+    text-decoration: underline;
 }
