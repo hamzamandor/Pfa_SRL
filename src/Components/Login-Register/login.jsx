@@ -15,6 +15,10 @@ const Login = () => {
 
   return (
     <div className={`wrapper ${action}`}>
+      <div className="home-link">
+      <a href="/" className="button home-button">← Home</a>
+
+      </div>
       <div className="form-box login">
         <form action="">
           <h1>Login</h1>
@@ -30,10 +34,9 @@ const Login = () => {
             <label>
               <input type="checkbox" /> Remember me
             </label>
-            {/* Remplacez cet élément <a> par un <span> */}
             <span>Forgot password?</span>
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" className="button">Login</button>
           <div className="register-link">
             <p>
               Don't have an account? 
@@ -64,7 +67,7 @@ const Login = () => {
               <input type="checkbox" /> I agree to the terms & conditions
             </label>
           </div>
-          <button type="submit">Register</button>
+          <button type="submit" className="button">Register</button>
           <div className="register-link">
             <p>
               Already have an account? 

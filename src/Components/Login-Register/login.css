@@ -1,7 +1,8 @@
+/* Styles généraux */
 .wrapper {
     position: relative;
-    width: 420px;
-    height: 450px;
+    width: 480px; /* Augmenté de 420px à 480px */
+    height: 500px; /* Augmenté de 450px à 500px */
     background: url("../../images/Default_books_0.jpg") no-repeat;
     border: 2px solid rgba(255, 255, 255, .1);
     backdrop-filter: blur(30px);
@@ -9,19 +10,23 @@
     border-radius: 10px;
     color: #fff;
     display: flex;
+    flex-direction: column; /* Alignement vertical */
     align-items: center;
     overflow: hidden;
     transition: height 0.2s ease;
 }
 
-
 .wrapper.active {
-    height: 520px;
+    height: 570px; /* Augmenté de 520px à 570px */
+}
+
+.home-link {
+    margin-bottom: 20px; /* Espace sous le bouton Home */
 }
 
 .wrapper .form-box {
     width: 100%;
-    padding: 40px;
+    padding: 50px; /* Augmenté de 40px à 50px */
 }
 
 .wrapper .form-box.login {
@@ -31,13 +36,13 @@
 
 .wrapper.active .form-box.login {
     transition: none;
-    transform: translate(-400px);
+    transform: translate(-480px); /* Ajusté pour correspondre à la nouvelle largeur */
 }
 
 .wrapper .form-box.register {
     position: absolute;
     transition: none;
-    transform: translate(400px);
+    transform: translate(480px); /* Ajusté pour correspondre à la nouvelle largeur */
 }
 
 .wrapper.active .form-box.register {
@@ -104,18 +109,29 @@ form .remember-forgot {
     text-decoration: underline;
 }
 
-form button {
+/* Style partagé pour les boutons */
+.button {
+    display: inline-block;
     width: 100%;
     height: 45px;
-    background: #fff;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
+    padding: 10px 20px;
+    background-color: #8B4513; /* Marron */
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
     font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: #A0522D; /* Marron plus clair */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
 }
 
 form .register-link {
@@ -133,6 +149,7 @@ form .register-link {
 .register-link p a:hover {
     text-decoration: underline;
 }
+
 .link-button {
     background: none;
     color: #fff;
@@ -142,9 +159,8 @@ form .register-link {
     font-size: 14.5px;
     padding: 0;
     margin: 0;
-  }
-  
-  .link-button:hover {
+}
+
+.link-button:hover {
     text-decoration: none;
-  }
-  
+}
