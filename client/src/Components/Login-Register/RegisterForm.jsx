@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = ({ switchToLogin }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Utiliser useNavigate
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -29,14 +31,15 @@ const RegisterForm = ({ switchToLogin }) => {
     }
 
     axios
-      .post("https://example.com/api/register", {
+      .post("http://localhost:3001/register", {
         username,
         email,
         password,
       })
       .then((response) => {
         console.log("Registration successful:", response.data);
-        // Afficher un message à l'utilisateur ou rediriger vers une nouvelle page
+        // Rediriger vers la page de login après l'inscription réussie
+        navigate('/HomeUser');
       })
       .catch((error) => {
         console.error("Registration failed:", error);

@@ -12,6 +12,7 @@ import About from "./pages/About/About";
 import BookList from "./Components/BookList/BookList";
 import BookDetails from "./Components/BookDetails/BookDetails";
 import Login from "./Components/Login-Register/login";
+import HomeUser from './Components/HomeUser';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,6 +24,7 @@ ReactDOM.render(
           <Route path="book" element={<BookList />} />
           <Route path="book/:id" element={<BookDetails />} />
           <Route path="login" element={<Login />} />
+          <Route path="HomeUser" element={<HomeUser />} />
         </Routes>
       </Router>
     </AppProvider>
