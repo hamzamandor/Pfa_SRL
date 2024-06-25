@@ -12,7 +12,9 @@ import About from "./pages/About/About";
 import BookList from "./Components/BookList/BookList";
 import BookDetails from "./Components/BookDetails/BookDetails";
 import Login from "./Components/Login-Register/login";
-import HomeUser from './Components/HomeUser';
+import HomeUser from './pages/HomeUsers/HomeUser';
+import BookDetailUser from './Components/Users/BookDetails/BookDetailUser';
+import BookListUser from './Components/Users/BookUser/BookListUser';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,7 +24,9 @@ ReactDOM.render(
           <Route path="/" element={<Home />} /> 
           <Route path="about" element={<About />} />
           <Route path="book" element={<BookList />} />
+          <Route path="bookUser" element={<BookListUser />} />
           <Route path="book/:id" element={<BookDetails />} />
+          <Route path="bookUser:id" element={<BookDetailUser />} />
           <Route path="login" element={<Login />} />
           <Route path="HomeUser" element={<HomeUser />} />
         </Routes>

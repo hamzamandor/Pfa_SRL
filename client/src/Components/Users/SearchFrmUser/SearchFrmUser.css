@@ -1,0 +1,30 @@
+.search-form {
+    width: 100%;
+    max-width: 680px; /* Ensure the form doesn't stretch too wide */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+  
+  .search-form-elem {
+    padding: 0.6rem 1.2rem; /* Reduce padding for a more compact form */
+    border-radius: 2rem; /* Smaller border radius */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .search-form-elem:hover {
+    background-color: rgba(180, 120, 8, 0.822); /* Darker background color on hover */
+  }
+  
+  .search-form-elem .form-control {
+    font-size: 1.4rem; /* Smaller font size */
+    padding: 0.4rem; /* Reduce padding for input */
+    width: 100%; /* Ensure input stretches full width */
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+  }
+  
+  .search-form-elem .form-control::placeholder {
+    opacity: 0.9;
+  }
+  

@@ -1,14 +1,17 @@
 import React from 'react';
-import Header from "../../Components/Header/Header";
-import { Outlet } from 'react-router-dom';
 
-const Home = () => {
+import { Outlet } from 'react-router-dom';
+import Hin from '../../Components/Users/h';
+
+
+
+const HomeUser = () => {
   return (
     <main>
-        <Header />
+       <Hin />
         <Outlet />
     </main>
-  )
+  );
 }
 
-export default Home
+export default HomeUser;
