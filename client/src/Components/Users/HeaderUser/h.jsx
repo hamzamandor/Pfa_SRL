@@ -1,8 +1,8 @@
 import React from 'react';
 
 import "./h";
-import NavbarUser from './NavbarUser/NavbarUser';
-import SearchFrmUser from './SearchFrmUser/SearchFrmUser';
+import NavbarUser from '../NavbarUser/NavbarUser';
+import SearchFrmUser from '../SearchFrmUser/SearchFrmUser';
 
 const Hin = () => {
   return (

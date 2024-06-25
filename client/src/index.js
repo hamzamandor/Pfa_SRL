@@ -15,10 +15,13 @@ import Login from "./Components/Login-Register/login";
 import HomeUser from './pages/HomeUsers/HomeUser';
 import BookDetailUser from './Components/Users/BookDetails/BookDetailUser';
 import BookListUser from './Components/Users/BookUser/BookListUser';
+import Save from './pages/save';
+
 
 ReactDOM.render(
   <React.StrictMode>
     <AppProvider>
+      
       <Router>
         <Routes>
           <Route path="/" element={<Home />} /> 
@@ -26,9 +29,10 @@ ReactDOM.render(
           <Route path="book" element={<BookList />} />
           <Route path="bookUser" element={<BookListUser />} />
           <Route path="book/:id" element={<BookDetails />} />
-          <Route path="bookUser:id" element={<BookDetailUser />} />
+          <Route path="bookUser/:id" element={<BookDetailUser />} />
           <Route path="login" element={<Login />} />
           <Route path="HomeUser" element={<HomeUser />} />
+          <Route path="HomeUser/savebook" element={<Save />} /> 
         </Routes>
       </Router>
     </AppProvider>

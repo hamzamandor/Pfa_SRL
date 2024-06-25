@@ -31,14 +31,16 @@ const NavbarUser = () => {
               <Link to="/bookUser" className='nav-link text-uppercase text-white fs-22 fw-bold ls-1'>Home</Link>
 
             </li>
-            <li className='nav-item'>
-              <Link to = "aboutUser" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>about</Link>
-          
-            </li>
-
+         
             <li className='nav-item'>
               <Link to = "savebook" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>SaveBook</Link>
               </li>
+
+              <li className='nav-item'>
+              <Link to = "support" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>Support</Link>
+          
+            </li>
+
 
             <li className='nav-item'>
               <Link to = "/" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>Disconnect</Link>

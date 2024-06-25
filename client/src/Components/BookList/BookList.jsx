@@ -6,6 +6,7 @@ import Book from '../BookList/Book';
 import Loading from '../Loader/Loader';
 import coverImg from '../../images/cover_not_found.jpg';
 import './BookList.css';
+import SearchForm from '../SearchForm/SearchForm';
 
 // https://covers.openlibrary.org/b/id/240727-S.jpg
 
@@ -29,6 +30,7 @@ const BookList = () => {
           <FaArrowLeft size={22} />
           <span className='fs-18 fw-6'>Retour à l'accueil</span>
         </Link>
+        <SearchForm />
         <section className='booklist'>
           <div className='container'>
             <div className='section-title'>

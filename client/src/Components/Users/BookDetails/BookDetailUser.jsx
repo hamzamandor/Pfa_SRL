@@ -9,38 +9,38 @@ const URL = "https://openlibrary.org/works/";
 
 const BookDetailUser = () => {
   const { id } = useParams();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [book, setBook] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setLoading(true);
     async function getBookDetailUser() {
       try {
         const response = await fetch(`${URL}${id}.json`);
         const data = await response.json();
-        console.log(data);
 
         if (data) {
           const { description, title, covers, subject_places, subject_times, subjects } = data;
           const newBook = {
-            description: description?.value ?? "No description found",
-            title: title ?? "No title found",
+            description: description?.value || "No description found",
+            title: title || "No title found",
             cover_img: covers?.length ? `https://covers.openlibrary.org/b/id/${covers[0]}-L.jpg` : coverImg,
-            subject_places: subject_places?.join(", ") ?? "No subject places found",
-            subject_times: subject_times?.join(", ") ?? "No subject times found",
-            subjects: subjects?.join(", ") ?? "No subjects found"
+            subject_places: subject_places?.join(", ") || "No subject places found",
+            subject_times: subject_times?.join(", ") || "No subject times found",
+            subjects: subjects?.join(", ") || "No subjects found"
           };
           setBook(newBook);
         } else {
           setBook(null);
         }
-        setLoading(false);
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching book details:", error);
+        setBook(null);
+      } finally {
         setLoading(false);
       }
     }
+
     getBookDetailUser();
   }, [id]);
 
@@ -49,7 +49,7 @@ const BookDetailUser = () => {
   return (
     <section className='book-details'>
       <div className='container'>
-        <button type='button' className='flex flex-c back-btn' onClick={() => navigate("/bookUser")}>
+        <button type='button' className='flex flex-c back-btn' onClick={() => navigate(-1)}>
           <FaArrowLeft size={22} />
           <span className='fs-18 fw-6'>Go Back</span>
         </button>

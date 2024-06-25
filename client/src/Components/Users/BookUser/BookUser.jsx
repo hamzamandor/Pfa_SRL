@@ -9,7 +9,7 @@ const BookUser = ({ id, cover_img, title, author, edition_count, first_publish_y
         <img src={cover_img} alt="cover" />
       </div>
       <div className='book-item-info text-center'>
-        <Link to={`/bookUser/${id}`}>
+        <Link to={`/bookUser/${BookUser.id}`} {...BookUser}>
           <div className='book-item-info-item title fw-7 fs-18'>
             <span>{title}</span>
           </div>
