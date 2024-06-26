@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./BookUser.css";
+import "./SaveBook.css";
 
-const BookUser = ({
+const Books = ({
   id,
   cover_img,
   title,
@@ -74,4 +74,5 @@ const BookUser = ({
   );
 };
 
-export default BookUser;
+
+export default Books;

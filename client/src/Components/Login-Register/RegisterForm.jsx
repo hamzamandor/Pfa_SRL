@@ -55,7 +55,7 @@ const RegisterForm = ({ switchToLogin }) => {
   return (
     <div className="form-box register">
       <form onSubmit={handleSubmit}>
-        <h1>Registration</h1>
+        <h1>SignUp</h1>
         <div className="input-box">
           <input
             type="text"

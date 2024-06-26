@@ -1,0 +1,23 @@
+.savee-button {
+    background-color: #8B4513; 
+    border: none;
+    color: white;
+    border-radius: 50px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .save-button:hover {
+    background-color: #A0522D; 
+  }
+
+  .save-button:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed;
+  }

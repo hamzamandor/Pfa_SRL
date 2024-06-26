@@ -33,7 +33,7 @@ const NavbarUser = () => {
             </li>
          
             <li className='nav-item'>
-              <Link to = "savebook" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>SaveBook</Link>
+              <Link to = "savebook" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>SavedBooks</Link>
               </li>
 
               <li className='nav-item'>
@@ -43,7 +43,7 @@ const NavbarUser = () => {
 
 
             <li className='nav-item'>
-              <Link to = "/" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>Disconnect</Link>
+              <Link to = "/" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>LogOut</Link>
               </li>
             
           </ul>
